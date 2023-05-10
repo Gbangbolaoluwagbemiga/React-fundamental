@@ -116,7 +116,7 @@ function Ass1(props) {
   // console.log(props);
   const hey = 'watsup';
   return (
-    <div className="overall m-4 col-md-6">
+    <div className="overall col-md-5 ms-5">
       <img
         src={logo}
         className="logo ms-5"
@@ -125,7 +125,7 @@ function Ass1(props) {
         height="150px"
       />
       <h1 className="h2 fw-bold">Fun facts about react</h1>
-      <ul>
+      <ul className="justify-content-center ">
         <li>Hey</li>
         <li>Hi</li>
         <li>Hello</li>
