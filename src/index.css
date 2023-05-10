@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+li::marker {
+  font-size: 1.4rem;
+  color: aquamarine;
+}
+.logo {
+  margin: auto;
+}

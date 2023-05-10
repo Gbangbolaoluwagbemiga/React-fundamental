@@ -112,20 +112,35 @@ trying.render(
 // ASSESSMENT 1
 import logo from './logo.svg';
 
-function Ass1() {
+function Ass1(props) {
+  // console.log(props);
+  const hey = 'watsup';
   return (
-    <div className="overall m-4">
-      <img src={logo} className="logo" alt="logo" width="40px" />
+    <div className="overall m-4 col-md-6">
+      <img
+        src={logo}
+        className="logo ms-5"
+        alt="logo"
+        width="150px"
+        height="150px"
+      />
       <h1 className="h2 fw-bold">Fun facts about react</h1>
       <ul>
         <li>Hey</li>
         <li>Hi</li>
         <li>Hello</li>
-        <li>Watsup</li>
+        <li>
+          my name is {props.name}, i am a {props.gender}
+        </li>
       </ul>
     </div>
   );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Ass1 />);
+root.render(
+  <div className="row">
+    <Ass1 name="oluwagbemiga" gender="male" />
+    <Ass1 name="unknown" gender="female" />
+  </div>
+);
