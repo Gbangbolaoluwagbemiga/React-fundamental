@@ -110,37 +110,62 @@ trying.render(
 */
 
 // ASSESSMENT 1
+// practicing map in react
 import logo from './logo.svg';
+import apicopy from './apicopy.js';
 
-function Ass1(props) {
-  // console.log(props);
-  const hey = 'watsup';
-  return (
-    <div className="overall col-md-5 ms-5">
-      <img
-        src={logo}
-        className="logo ms-5"
-        alt="logo"
-        width="150px"
-        height="150px"
-      />
-      <h1 className="h2 fw-bold">Fun facts about react</h1>
-      <ul className="justify-content-center ">
-        <li>Hey</li>
-        <li>Hi</li>
-        <li>Hello</li>
-        <li>
-          my name is {props.name}, i am a {props.gender}
-        </li>
-      </ul>
-    </div>
-  );
+function Ass1() {
+  // function Ass1({name, gender, done}) {
+  const Apicopy = apicopy.map(api => {
+    return (
+      <div className="overall col-md-5 ms-5">
+        <img
+          src={logo}
+          className="logo ms-5"
+          alt="logo"
+          width="150px"
+          height="150px"
+        />
+        <h1 className="h2 fw-bold">Fun facts about react</h1>
+        <ul className="justify-content-center ">
+          <li>{api.name}</li>
+          <li>{api.gender}</li>
+          <li>{api.age}</li>
+          {api.gender && ( //peradventure gender doesn't exist, it doesn't get added.
+            <li>
+              my name is {api.name}, i am a {api.gender}.I am {api.age}
+            </li>
+          )}
+        </ul>
+      </div>
+    );
+  });
+  return Apicopy;
+  // return (
+  //   <div className="overall col-md-5 ms-5">
+  //     <img
+  //       src={logo}
+  //       className="logo ms-5"
+  //       alt="logo"
+  //       width="150px"
+  //       height="150px"
+  //     />
+  //     <h1 className="h2 fw-bold">Fun facts about react</h1>
+  //     <ul className="justify-content-center ">
+  //       <li>Hey</li>
+  //       <li>Hi</li>
+  //       <li>Hello</li>
+  //       <li>
+  //         my name is {name}, i am a {gender}. {done}
+  //       </li>
+  //     </ul>
+  //   </div>
+  // );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div className="row">
-    <Ass1 name="oluwagbemiga" gender="male" />
-    <Ass1 name="unknown" gender="female" />
+    <Ass1 />
   </div>
 );
