@@ -22,4 +22,30 @@ function App() {
   );
 }
 
-export default App;
+function Display(api) {
+  return (
+    <div className="overall col-md-5 ms-md-5">
+      <img
+        src={logo}
+        className="logo ms-5"
+        alt="logo"
+        width="150px"
+        height="150px"
+      />
+      <h1 className="h2 fw-bold">Fun facts about react</h1>
+      <ul className="justify-content-center ">
+        <li>{api.name}</li>
+        <li>{api.gender}</li>
+        <li>{api.age}</li>
+        {api.gender && ( //peradventure gender doesn't exist, it doesn't get added.
+          <li>
+            my name is {api.name}, i am a {api.gender}.I am {api.age}
+          </li>
+        )}
+      </ul>
+    </div>
+  );
+}
+
+export default Display;
+// export default App;

@@ -1,8 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
+// import Display from './App';
 // import reportWebVitals from './reportWebVitals';
+
+// meme generator
+function Header() {
+  return (
+    <div className="container">
+      <nav className="nav">Meme Generator</nav>
+      <div className="form">
+        <input className="form--input" />
+        <input className="form--input" />
+      </div>
+    </div>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Header />);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -107,7 +122,6 @@ trying.render(
   </div>
 );
 // trying.render(<p>Trial</p>);
-*/
 
 // ASSESSMENT 1
 // practicing map in react
@@ -118,26 +132,12 @@ function Ass1() {
   // function Ass1({name, gender, done}) {
   const Apicopy = apicopy.map(api => {
     return (
-      <div className="overall col-md-5 ms-5">
-        <img
-          src={logo}
-          className="logo ms-5"
-          alt="logo"
-          width="150px"
-          height="150px"
-        />
-        <h1 className="h2 fw-bold">Fun facts about react</h1>
-        <ul className="justify-content-center ">
-          <li>{api.name}</li>
-          <li>{api.gender}</li>
-          <li>{api.age}</li>
-          {api.gender && ( //peradventure gender doesn't exist, it doesn't get added.
-            <li>
-              my name is {api.name}, i am a {api.gender}.I am {api.age}
-            </li>
-          )}
-        </ul>
-      </div>
+      <Display
+        key={api.name}
+        name={api.name}
+        gender={api.gender}
+        age={api.age}
+      />
     );
   });
   return Apicopy;
@@ -165,7 +165,9 @@ function Ass1() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div className="row">
+  <div className="row container">
     <Ass1 />
   </div>
 );
+
+  */
