@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import Display from './App';
@@ -17,7 +17,7 @@ function Header() {
   );
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Header />);
+~root.render(<Header />);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -169,5 +169,32 @@ root.render(
     <Ass1 />
   </div>
 );
+
+// Practicing state
+function StatePractice() {
+  const [number, changeNumber] = useState(0);
+  function addNo() {
+    // changeNumber(number + 1);
+    changeNumber(nxt => nxt + 1);
+  }
+  function subtractNo() {
+    // changeNumber(number - 1);
+    changeNumber(prev => prev - 1);
+  }
+  return (
+    <div className="container">
+      <div className="display"> {number} </div>
+      <div className="add" onClick={addNo}>
+        +
+      </div>
+      <div className="add" onClick={subtractNo}>
+        -
+      </div>
+    </div>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<StatePractice />);
+
 
   */
