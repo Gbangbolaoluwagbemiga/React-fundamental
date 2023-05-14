@@ -10,14 +10,15 @@ function Header() {
     <div className="container">
       <nav className="nav">Meme Generator</nav>
       <div className="form">
-        <input className="form--input" />
-        <input className="form--input" />
+        <input className="form--input" type="text" />
+        <input className="form--input" type="text" />
+        <button>Add</button>
       </div>
     </div>
   );
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
-~root.render(<Header />);
+root.render(<Header />);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -192,6 +193,14 @@ function StatePractice() {
       </div>
     </div>
   );
+
+  
+  const [number, addNo] = useState([1]);
+  function sum() {
+    addNo(prev => [...prev, prev.length + 1]);
+  }
+  const individualItem = number.map(it => <p>{it}</p>);
+  <p>{individualItem}</p>;
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<StatePractice />);
