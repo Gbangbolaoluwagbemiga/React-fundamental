@@ -6,14 +6,22 @@ import './index.css';
 
 // meme generator
 function Header() {
+  const [number, addNo] = useState([]);
+  function sum() {
+    addNo(prev => [...prev, prev.length + 1]);
+  }
+  const individualItem = number.map(it => <p>{it}</p>);
+
   return (
     <div className="container">
       <nav className="nav">Meme Generator</nav>
       <div className="form">
         <input className="form--input" type="text" />
         <input className="form--input" type="text" />
-        <button>Add</button>
+
+        <button onClick={sum}>Add</button>
       </div>
+      <p>{individualItem}</p>
     </div>
   );
 }
@@ -195,12 +203,7 @@ function StatePractice() {
   );
 
   
-  const [number, addNo] = useState([1]);
-  function sum() {
-    addNo(prev => [...prev, prev.length + 1]);
-  }
-  const individualItem = number.map(it => <p>{it}</p>);
-  <p>{individualItem}</p>;
+ 
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<StatePractice />);
