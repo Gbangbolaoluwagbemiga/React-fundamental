@@ -33,7 +33,7 @@ function Header() {
 const apiDestructure = api.map(ap => {
   return (
   <p>{ap.id}</p>,
-  key={ap.name}
+  // key={ap.name}
   )
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
