@@ -32,9 +32,9 @@ function Header() {
 }
 const apiDestructure = api.map(ap => {
   return (
-  <p>{ap.id}</p>,
-  // key={ap.name}
-  )
+    <p>{ap.id}</p>
+    // key={ap.name}
+  );
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<StateExplore id={apiDestructure} />);
