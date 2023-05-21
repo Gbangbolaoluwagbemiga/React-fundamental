@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import StateExplore from './App';
+import api from './apicopy';
+
 // import Display from './App';
 // import reportWebVitals from './reportWebVitals';
+
+// Understanding state nad props dynamics
 
 // meme generator
 function Header() {
@@ -25,8 +30,15 @@ function Header() {
     </div>
   );
 }
+const apiDestructure = api.map(ap => {
+  return (
+  <p>{ap.id}</p>,
+  key={ap.name}
+  )
+});
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Header />);
+root.render(<StateExplore id={apiDestructure} />);
+// root.render(<Header />);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(

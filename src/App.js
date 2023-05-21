@@ -47,5 +47,9 @@ function Display(api) {
   );
 }
 
-export default Display;
+function StateExplore(props) {
+  return <p>{props.id}</p>;
+}
+
+export default StateExplore;
 // export default App;
