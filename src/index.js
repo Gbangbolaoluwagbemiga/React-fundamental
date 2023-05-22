@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import StateExplore from './App';
-import api from './apicopy';
+import apicopy from './apicopy';
 
 // import Display from './App';
 // import reportWebVitals from './reportWebVitals';
@@ -30,14 +30,21 @@ function Header() {
     </div>
   );
 }
-const apiDestructure = api.map(ap => {
+function PropsState() {
+  const api = apicopy;
   return (
-    <p>{ap.id}</p>
-    // key={ap.name}
+    <>
+      {/* <h1>HI</h1> */}
+      <div>
+        {api.map(api => (
+          <StateExplore key={api.name} id={api.id} />
+        ))}
+      </div>
+    </>
   );
-});
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<StateExplore id={apiDestructure} />);
+root.render(<PropsState />);
 // root.render(<Header />);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));

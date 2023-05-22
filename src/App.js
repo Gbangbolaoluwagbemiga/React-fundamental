@@ -48,7 +48,12 @@ function Display(api) {
 }
 
 function StateExplore(props) {
-  return <p>{props.id}</p>;
+  return (
+    <>
+      <h1>HI</h1>
+      <p>{props.id}</p>
+    </>
+  );
 }
 
 export default StateExplore;
