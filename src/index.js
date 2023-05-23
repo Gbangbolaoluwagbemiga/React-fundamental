@@ -37,7 +37,7 @@ function PropsState() {
       {/* <h1>HI</h1> */}
       <div>
         {api.map(api => (
-          <StateExplore key={api.name} id={api.id} />
+          <StateExplore key={api.age} id={api.id} />
         ))}
       </div>
     </>
