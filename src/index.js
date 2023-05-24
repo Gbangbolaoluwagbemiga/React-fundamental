@@ -34,7 +34,6 @@ function PropsState() {
   const api = apicopy;
   return (
     <>
-      {/* <h1>HI</h1> */}
       <div>
         {api.map(api => (
           <StateExplore key={api.age} id={api.id} />
@@ -43,6 +42,7 @@ function PropsState() {
     </>
   );
 }
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<PropsState />);
 // root.render(<Header />);
