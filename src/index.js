@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import StateExplore from './App';
 import apicopy from './apicopy';
+import Box from './box';
 
 // import Display from './App';
 // import reportWebVitals from './reportWebVitals';
@@ -42,9 +43,20 @@ function PropsState() {
     </>
   );
 }
+function PropsCol() {
+  const api = apicopy;
+  return (
+    <>
+      {api.map(col => (
+        <Box key={col.id} color={col.color} />
+      ))}
+    </>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<PropsState />);
+root.render(<PropsCol />);
+// root.render(<PropsState />);
 // root.render(<Header />);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));

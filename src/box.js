@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
-import {ReactDOM} from 'react';
 
-function Box() {
+export default function Box(props) {
   const styles = {
-    background: 'black',
+    background: props.color,
+    color: 'white',
+    width: '350px',
+    height: '100px',
+    margin: '10px',
+    display: 'inline-block',
   };
   return <div style={styles}></div>;
 }
