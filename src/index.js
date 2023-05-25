@@ -55,7 +55,12 @@ function PropsCol() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<PropsCol />);
+root.render(
+  <>
+    <div>{alert(`click on the boxes to see the magic`)}</div>
+    <PropsCol />
+  </>
+);
 // root.render(<PropsState />);
 // root.render(<Header />);
 
