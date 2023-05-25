@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
 
 export default function Box(props) {
+  const [col, setCol] = useState(props.on);
+
   const styles = {
-    background: props.color,
-    color: 'white',
-    width: '350px',
+    background: col ? 'black' : 'transparent',
+    border: props.color === 'white' ? ' 3px solid white' : '3px solid black',
+    width: '100px',
     height: '100px',
-    margin: '10px',
+    margin: '5px 10px',
     display: 'inline-block',
   };
-  return <div style={styles}></div>;
+  function toggle() {
+    setCol(prevOn => !prevOn);
+  }
+  return <div style={styles} onClick={toggle}></div>;
 }

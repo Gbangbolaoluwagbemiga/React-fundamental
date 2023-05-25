@@ -48,7 +48,7 @@ function PropsCol() {
   return (
     <>
       {api.map(col => (
-        <Box key={col.id} color={col.color} />
+        <Box key={col.id} color={col.color} on={col.on} />
       ))}
     </>
   );

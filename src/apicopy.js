@@ -21,7 +21,8 @@ export default [
     name: 'Oluwagbemiga',
     gender: 'male',
     age: '22',
-    color: 'black',
+    color: 'white',
+    on: true,
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ export default [
     gender: 'male',
     age: '74',
     color: 'black',
+    on: false,
   },
   {
     id: 3,
@@ -36,13 +38,15 @@ export default [
     gender: 'female',
     age: '61',
     color: 'black',
+    on: false,
   },
   {
     id: 4,
     name: 'Temi',
     gender: 'female',
     age: '18',
-    color: 'black',
+    color: 'white',
+    on: true,
   },
   {
     id: 5,
@@ -50,12 +54,14 @@ export default [
     gender: 'female',
     age: '30',
     color: 'black',
+    on: false,
   },
   {
     id: 6,
     name: 'Ay',
     gender: 'female',
     age: '36',
-    color: 'black',
+    color: 'white',
+    on: true,
   },
 ];
