@@ -48,7 +48,13 @@ function PropsCol() {
   return (
     <>
       {api.map(col => (
-        <Box key={col.id} color={col.color} on={col.on} />
+        <Box
+          key={col.id}
+          id={() => console.log(col.age)}
+          color={col.color}
+          on={col.on}
+          cl={() => console.log('hi')}
+        />
       ))}
     </>
   );
@@ -57,7 +63,7 @@ function PropsCol() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <div>{alert(`click on the boxes to see the magic`)}</div>
+    {/* <div>{alert(`click on the boxes to see the magic`)}</div> */}
     <PropsCol />
   </>
 );
