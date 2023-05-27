@@ -14,6 +14,6 @@ export default function Box(props) {
   function toggle() {
     setCol(prevOn => !prevOn);
   }
-  return <div style={styles} onClick={props.id}></div>;
-  // return <div style={styles} onClick={toggle}></div>;
+  // return <div style={styles} onClick={props.id}></div>;
+  return <div style={styles} onClick={toggle}></div>;
 }
