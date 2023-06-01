@@ -60,13 +60,13 @@ function PropsCol() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <>
-    {/* <div>{alert(`click on the boxes to see the magic`)}</div> */}
-    <PropsCol />
-  </>
-);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+<>
+  {/* <div>{alert(`click on the boxes to see the magic`)}</div> */}
+  <PropsCol />
+</>;
+// );
 // root.render(<PropsState />);
 // root.render(<Header />);
 
@@ -247,8 +247,42 @@ function StatePractice() {
   
  
 }
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<StatePractice />);
 
 
   */
+//  practicing advanced forms
+function Forms() {
+  const [forms, setForms] = useState({firstName: '', lastName: ''});
+
+  console.log(forms);
+  function handleForm(e) {
+    setForms(prev => {
+      return {...prev, [e.target.name]: e.target.value};
+    });
+  }
+
+  return (
+    <form className="m-5">
+      <input
+        type="text"
+        placeholder="first name"
+        name="firstName"
+        onChange={handleForm}
+      />
+      <input
+        type="text"
+        placeholder="last name"
+        name="lastName"
+        onChange={handleForm}
+      />
+      <input
+        type="text"
+        placeholder="last name"
+        name="lastName"
+        onChange={handleForm}
+      />
+    </form>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Forms />);
