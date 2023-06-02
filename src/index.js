@@ -5,6 +5,8 @@ import StateExplore from './App';
 import apicopy from './apicopy';
 import Box from './box';
 import {useEffect} from 'react';
+// import {Fraction} from 'fractional';
+import numeral from 'numeral';
 
 // import Display from './App';
 // import reportWebVitals from './reportWebVitals';
@@ -251,6 +253,7 @@ function StatePractice() {
 
 
   */
+
 //  practicing advanced forms
 function Forms() {
   const [forms, setForms] = useState({firstName: '', lastName: ''});
@@ -299,7 +302,7 @@ function Api() {
     <div className="container">
       {api && (
         <div className="row">
-          <h1 className="h2 fw-bold text-right mx-auto">
+          <h1 className="h2 fw-bold text-center mx-auto">
             LIST OF EUROPE COUNTRIES WITH LARGE AREA SIZE
           </h1>
 
@@ -314,11 +317,18 @@ function Api() {
                 />
                 <h1 className="h3 fw-bold my-4">{api.name.common}</h1>
                 <p>
-                  Population:{' '}
-                  <span className="fw-bold h4">{api.population}</span> people
+                  Population:
+                  <span className="fw-bold h5">
+                    {numeral(api.population).format('0,0')}
+                  </span>{' '}
+                  people
                 </p>
                 <p>
-                  Land Size: <span className="fw-bold h4">{api.area}</span>{' '}
+                  Land Size:{' '}
+                  <span className="fw-bold h5">
+                    {numeral(api.area).format('0,0')}
+                  </span>{' '}
+                  sq km
                 </p>
               </div>
             );
