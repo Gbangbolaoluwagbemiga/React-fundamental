@@ -4,6 +4,7 @@ import './index.css';
 import StateExplore from './App';
 import apicopy from './apicopy';
 import Box from './box';
+import {useEffect} from 'react';
 
 // import Display from './App';
 // import reportWebVitals from './reportWebVitals';
@@ -275,14 +276,58 @@ function Forms() {
         name="lastName"
         onChange={handleForm}
       />
-      <input
-        type="text"
-        placeholder="last name"
-        name="lastName"
-        onChange={handleForm}
-      />
     </form>
   );
 }
+
+// practicing out my first react project
+
+function Api() {
+  const [api, setApi] = useState(null);
+
+  useEffect(() => {
+    fetch('https://restcountries.com/v3.1/region/europe')
+      .then(res => res.json())
+      .then(data => {
+        const area = data.filter(country => country.area >= 30000);
+        console.log(area);
+        setApi(area);
+      });
+  }, []);
+
+  return (
+    <div className="container">
+      {api && (
+        <div className="row">
+          <h1 className="h2 fw-bold text-right mx-auto">
+            LIST OF EUROPE COUNTRIES WITH LARGE AREA SIZE
+          </h1>
+
+          {api.map(api => {
+            console.log(api);
+            return (
+              <div className="col-4 my-5" key={api.capital[0]}>
+                <img
+                  src={api.flags.png}
+                  alt={api.flags.alt}
+                  style={{width: '90%', height: '40%'}}
+                />
+                <h1 className="h3 fw-bold my-4">{api.name.common}</h1>
+                <p>
+                  Population:{' '}
+                  <span className="fw-bold h4">{api.population}</span> people
+                </p>
+                <p>
+                  Land Size: <span className="fw-bold h4">{api.area}</span>{' '}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Forms />);
+root.render(<Api />);
