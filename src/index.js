@@ -256,7 +256,12 @@ function StatePractice() {
 
 //  practicing advanced forms
 function Forms() {
-  const [forms, setForms] = useState({firstName: '', lastName: ''});
+  const [forms, setForms] = useState({
+    firstName: '',
+    lastName: '',
+    Email: '',
+    message: '',
+  });
 
   console.log(forms);
   function handleForm(e) {
@@ -272,16 +277,35 @@ function Forms() {
         placeholder="first name"
         name="firstName"
         onChange={handleForm}
-      />
+      />{' '}
+      <br />
       <input
         type="text"
         placeholder="last name"
         name="lastName"
         onChange={handleForm}
-      />
+      />{' '}
+      <br />
+      <input
+        type="email"
+        placeholder="Email"
+        name="Email"
+        onChange={handleForm}
+      />{' '}
+      <br />
+      <textarea
+        name="message"
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="Type your message"
+        onChange={handleForm}
+      ></textarea>
     </form>
   );
 }
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Forms />);
 
 // practicing out my first react project
 
@@ -290,7 +314,9 @@ function Api() {
 
   useEffect(() => {
     fetch('https://restcountries.com/v3.1/region/europe')
-      .then(res => res.json())
+      .then(res => {
+        return res.json();
+      })
       .then(data => {
         const area = data.filter(country => country.area >= 30000);
         console.log(area);
@@ -339,5 +365,5 @@ function Api() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Api />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Api />);
