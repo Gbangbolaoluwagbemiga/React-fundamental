@@ -309,7 +309,7 @@ root.render(<Forms />);
 
 // practicing out my first react project
 
-function Api() {
+function Countries() {
   const [api, setApi] = useState(null);
 
   useEffect(() => {
@@ -366,4 +366,4 @@ function Api() {
 }
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<Api />);
+// root.render(<Countries />);
