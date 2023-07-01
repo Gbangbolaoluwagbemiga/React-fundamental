@@ -304,8 +304,8 @@ function Forms() {
     </form>
   );
 }
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Forms />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Forms />);
 
 // practicing out my first react project
 
@@ -365,5 +365,5 @@ function Countries() {
   );
 }
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<Countries />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Countries />);
